@@ -1,0 +1,42 @@
+---
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
+        <style>
+            body {
+                padding: 40px;
+                background-color: beige;
+            }
+        </style>
+    </head>
+    <body>
+        <h1
+            class="text-center bg-blue-200 text-blue-500 p-2 mb-4 text-4xl border rounded-lg"
+        >
+            {title}
+        </h1>
+        
+
+        <nav class="p-5 w-full"> <!-- Asegúrate que el nav tenga w-full para ocupar todo el ancho disponible -->
+            <div class="w-full group inline-block relative"> <!-- Añade w-full aquí para asegurar que el div ocupe todo el ancho -->
+                <button class=" border-blue-600 w-full text-white font-semibold bg-blue-300 rounded-md px-3 py-3 border-2 hover:bg-blue-200"> <!-- Usa w-full para que el botón ocupe todo el ancho del div -->
+                    Menu
+                </button>
+                <div class="hidden absolute group-hover:flex flex-col mt-1 w-full bg-blue-300 shadow-lg rounded text-white font-bold">
+                    <a href="/" class="py-2 px-4 hover:bg-blue-500 bg-blue-200 border-2 border-blue-300">Inicio</a>
+                    <a href="/upload" class="py-2 px-4 hover:bg-blue-500 border-2 bg-blue-200 border-blue-300">Añadir Foto</a>
+                    <a href="/mypics" class="py-2 px-4 hover:bg-blue-500  bg-blue-200 border-2 border-blue-300">Mis Fotos</a>
+                    <a href="/logout" class="py-2 px-4 hover:bg-blue-500  bg-blue-200 border-2 border-blue-300">Cerrar Sesión</a> <!-- Corregido hover:bg-blue-1300 a hover:bg-blue-300 -->
+                </div>
+            </div>
+        </nav>
+
+        <slot />
+    </body>
+</html>
