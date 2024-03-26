@@ -13,9 +13,9 @@ function replaceHashtagsWithLinks(text) {
 
 
 
-<div class=" p-2 border border border-red-500 rounded-lg flex flex-col w-fit">
+<div class=" p-2 border border-blue-500 rounded-lg flex flex-col w-fit">
     <img src={`${config.IMG_URL}/${image}`} alt={image} width="400px">
    
-    <h1 class="text-center rounded  bg-red-500 text-white"><Fragment set:html={replaceHashtagsWithLinks(hashtags)} /></h1>
-    <h2 class="text-center  bg-blue-500 text-white"><a href={"/user/"+userName}>{userName}</a></h2>
+    <h1 class="mt-2 text-center rounded bg-red-400 text-white"><Fragment set:html={replaceHashtagsWithLinks(hashtags)} /></h1>
+    <h2 class="mt-2 text-center rounded bg-blue-400 hover:bg-blue-600 text-white"><a href={"/user/"+userName}>{userName}</a></h2>
 </div>
